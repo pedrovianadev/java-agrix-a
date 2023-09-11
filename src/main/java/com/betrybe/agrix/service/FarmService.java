@@ -3,23 +3,22 @@ package com.betrybe.agrix.service;
 import com.betrybe.agrix.model.entities.Farm;
 import com.betrybe.agrix.model.repositories.FarmRepository;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * Class FarmService.
+ * FarmService class, service layer for /farm endpoints.
  */
 @Service
 public class FarmService {
-
   private FarmRepository farmRepository;
 
   /**
-   * Function to construct class FarmService.
+   * Constructor function of the FarmService class.
    *
-   * @param farmRepository repository received by spring
-   *                       by injection and dependency
-   */
+   * @param farmRepository repository received from spring
+   *                        by dependency injection */
   @Autowired
   public FarmService(FarmRepository farmRepository) {
     this.farmRepository = farmRepository;
@@ -35,4 +34,8 @@ public class FarmService {
     return createdFarm;
   }
 
+  public Optional<Farm> getFarmById(Long farmId) {
+    Optional<Farm> farmFound = this.farmRepository.findById(farmId);
+    return farmFound;
+  }
 }
