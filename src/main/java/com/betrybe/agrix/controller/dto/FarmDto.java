@@ -3,19 +3,19 @@ package com.betrybe.agrix.controller.dto;
 import com.betrybe.agrix.model.entities.Farm;
 
 /**
- * Dto layer for creating farms, adopting the good practices of using
- * of dto.
+ * Camada Dto para criacao de farms, adotando as boas praticas do uso
+ * de dto.
  *
- * @param id id of the new farm
- * @param name name of the new farm
- * @param size size of the new farm
+ * @param id id da nova farm
+ * @param name nome da nova farm
+ * @param size tamanho da nova farm
  */
 public record FarmDto(Long id, String name, Double size) {
 
   /**
-   * Function that converts FarmDto to a Farm, instantiating.
+   * Funcao que converte a FarmDto para uma Farm, instanciando.
    *
-   * @return returns an instantiated Farm
+   * @return retorna uma Farm instanciada
    */
   public Farm toFarm() {
     return new Farm(id, name, size);

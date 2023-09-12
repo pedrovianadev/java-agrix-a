@@ -4,7 +4,7 @@ import com.betrybe.agrix.model.entities.Farm;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * Create the Farm repository.
+ * Creates the Farm repository.
  */
 public interface FarmRepository extends JpaRepository<Farm, Long> {
 }
